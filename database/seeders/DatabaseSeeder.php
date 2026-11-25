@@ -21,22 +21,6 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        Biodata::updateOrCreate(
-            ['nim' => '12.11.5866'],
-            [
-                'nama' => 'rizki eka prasodjo',
-                'deskripsi' => '12.11.5866 merupakan master dari uts ini dengan tugas membuat front-end dan mengirimkannya ke grup',
-                'foto' => 'rizki.jpg',
-            ]
-        );
-
-        Biodata::updateOrCreate(
-            ['nim' => '12.11.6018'],
-            [
-                'nama' => 'andi agus salim',
-                'deskripsi' => 'dengan NIM 12.11.6018 merupakan pegawai dan mempunyai tugas mengerjakan back-end pada UTS ini',
-                'foto' => 'andi.jpg',
-            ]
-        );
+        
     }
 }
