@@ -40,7 +40,10 @@ class BiodataController extends Controller
         ]);
 
         if ($request->hasFile('foto')) {
-            $validated['foto'] = $request->file('foto')->store('fotos', 'public');
+            $file = $request->file('foto');
+            $filename = time().'_'.\Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)).'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('images'), $filename);
+            $validated['foto'] = $filename;
         }
 
         Biodata::create($validated);
@@ -72,9 +75,16 @@ class BiodataController extends Controller
         if ($request->hasFile('foto')) {
             // Hapus foto lama jika ada
             if ($biodata->foto) {
-                \Storage::disk('public')->delete($biodata->foto);
+                $oldPath = public_path('images/'.$biodata->foto);
+                if (file_exists($oldPath)) {
+                    unlink($oldPath);
+                }
             }
-            $validated['foto'] = $request->file('foto')->store('fotos', 'public');
+
+            $file = $request->file('foto');
+            $filename = time().'_'.\Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)).'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('images'), $filename);
+            $validated['foto'] = $filename;
         }
 
         $biodata->update($validated);
@@ -91,7 +101,10 @@ class BiodataController extends Controller
         $nama = $biodata->nama;
 
         if ($biodata->foto) {
-            \Storage::disk('public')->delete($biodata->foto);
+            $oldPath = public_path('images/'.$biodata->foto);
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
         }
 
         $biodata->delete();

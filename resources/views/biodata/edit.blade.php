@@ -48,7 +48,7 @@
                         <label for="foto" class="form-label small fw-semibold text-secondary">Foto</label>
                         @if ($biodata->foto)
                             <div class="mb-2">
-                                <img src="{{ asset('storage/' . $biodata->foto) }}" alt="Foto saat ini"
+                                <img src="{{ asset('images/' . $biodata->foto) }}" alt="Foto saat ini"
                                      style="height: 100px; border-radius: 8px; object-fit: cover;">
                                 <p class="form-text mt-1">Unggah foto baru untuk mengganti yang lama.</p>
                             </div>

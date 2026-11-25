@@ -119,7 +119,7 @@
             <div class="custom-card">
                 <div class="card-img-wrapper">
                     @if ($biodata->foto)
-                        <img src="{{ asset('storage/' . $biodata->foto) }}" alt="{{ $biodata->nama }}">
+                        <img src="{{ asset('images/' . $biodata->foto) }}" alt="{{ $biodata->nama }}">
                     @else
                         <img src="https://ui-avatars.com/api/?name={{ urlencode($biodata->nama) }}&size=400&background=e5e7eb&color=555e68&bold=true" alt="{{ $biodata->nama }}">
                     @endif
