@@ -75,8 +75,8 @@
                 <nav class="d-flex align-items-center flex-wrap gap-2">
                     <a class="custom-nav-link {{ request()->routeIs('biodata.index') ? 'active' : '' }}" href="{{ route('biodata.index') }}">Home</a>
                     <a class="custom-nav-link" href="#">Features</a>
-                    <a class="custom-nav-link" href="#">(Masukkan Nama)</a>
-                    <a class="custom-nav-link" href="#">(Masukkan NIM)</a>
+                    <a class="custom-nav-link" href="#">Anak Agung Ngurah Sugiri Astha Putra Panji</a>
+                    <a class="custom-nav-link" href="#">24010110179</a>
                 </nav>
             </div>
         </div>
@@ -112,7 +112,7 @@
             </div>
             <div class="footer-divider"></div>
             <p class="footer-copyright mb-0">
-                &copy; 2025 Dibuat Sejujurnya Oleh Team (Masukkan Nama ketua) dan (Masukkan Nama Anggota) Tanpa Mencotek dari Tim Lain
+                &copy; 2025 Dibuat Sejujurnya Oleh Team Anak Agung Ngurah Sugiri Astha Putra Panji dan Bagus Dwi Syahputra Tanpa Mencotek dari Tim Lain
             </p>
         </div>
     </footer>
